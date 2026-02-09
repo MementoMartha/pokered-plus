@@ -1507,3 +1507,13 @@ _VictreebelDexEntry::
 	next "has ever returned"
 	next "from there"
 	dex
+
+_MissingNoDexEntry::
+	text "This #MON has"
+	next "only recently"
+	next "been discovered."
+
+	page "No detailed info"
+	next "is available at"
+	next "this time"
+	dex
