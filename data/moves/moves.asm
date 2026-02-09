@@ -16,6 +16,7 @@ Moves:
 	move DOUBLESLAP,   TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 10
 	move COMET_PUNCH,  TWO_TO_FIVE_ATTACKS_EFFECT,  18, NORMAL,        85, 15
 	move MEGA_PUNCH,   NO_ADDITIONAL_EFFECT,        80, NORMAL,        85, 20
+	move UPPERCUT,     FLINCH_SIDE_EFFECT2,         50, FIGHTING,      85, 15
 	move PAY_DAY,      PAY_DAY_EFFECT,              40, NORMAL,       100, 20
 	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,         100, 15
 	move ICE_PUNCH,    FREEZE_SIDE_EFFECT1,         75, ICE,          100, 15
@@ -68,6 +69,7 @@ Moves:
 	move WATER_GUN,    NO_ADDITIONAL_EFFECT,        40, WATER,        100, 25
 	move HYDRO_PUMP,   NO_ADDITIONAL_EFFECT,       120, WATER,         80,  5
 	move SURF,         NO_ADDITIONAL_EFFECT,        95, WATER,        100, 15
+	move POWDER_SNOW,  FREEZE_SIDE_EFFECT1,         40, ICE,          100, 25
 	move ICE_BEAM,     FREEZE_SIDE_EFFECT1,         95, ICE,          100, 10
 	move BLIZZARD,     FREEZE_SIDE_EFFECT1,        120, ICE,           90,  5
 	move PSYBEAM,      CONFUSION_SIDE_EFFECT,       65, PSYCHIC_TYPE, 100, 20
@@ -175,5 +177,8 @@ Moves:
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 10
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
+	move MAGNET_BOMB,  SWIFT_EFFECT,                60, STEEL,        100, 20
+	move DRAIN_KISS,   DRAIN_HP_EFFECT,             50, FAIRY,        100, 10
+	move FAIRY_WIND,   NO_ADDITIONAL_EFFECT,        40, FAIRY,        100, 30
 	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

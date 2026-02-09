@@ -6,6 +6,7 @@ MoveSoundTable:
 	db SFX_DOUBLESLAP,         $00, $80 ; DOUBLESLAP
 	db SFX_BATTLE_0B,          $01, $80 ; COMET_PUNCH
 	db SFX_BATTLE_0D,          $00, $40 ; MEGA_PUNCH
+	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; UPPERCUT
 	db SFX_SILPH_SCOPE,        $00, $ff ; PAY_DAY
 	db SFX_BATTLE_0D,          $10, $60 ; FIRE_PUNCH
 	db SFX_BATTLE_0D,          $20, $80 ; ICE_PUNCH
@@ -58,6 +59,7 @@ MoveSoundTable:
 	db SFX_BATTLE_24,          $20, $60 ; WATER_GUN
 	db SFX_BATTLE_2A,          $00, $80 ; HYDRO_PUMP
 	db SFX_BATTLE_2C,          $00, $80 ; SURF
+	db SFX_BATTLE_1B,          $03, $60 ; POWDER_SNOW
 	db SFX_BATTLE_28,          $40, $80 ; ICE_BEAM
 	db SFX_BATTLE_29,          $f0, $e0 ; BLIZZARD
 	db SFX_PSYBEAM,            $00, $80 ; PSYBEAM
@@ -165,6 +167,9 @@ MoveSoundTable:
 	db SFX_BATTLE_26,          $f0, $ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
+	db SFX_BATTLE_34,          $00, $40 ; MAGNET_BOMB
+	db SFX_BATTLE_09,          $88, $10 ; DRAIN_KISS
+	db SFX_BATTLE_13,          $00, $e0 ; FAIRY_WIND
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

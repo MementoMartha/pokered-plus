@@ -5,6 +5,7 @@ AttackAnimationPointers:
 	dw DoubleSlapAnim
 	dw CometPunchAnim
 	dw MegaPunchAnim
+	dw UppercutAnim
 	dw PayDayAnim
 	dw FirePunchAnim
 	dw IcePunchAnim
@@ -57,6 +58,7 @@ AttackAnimationPointers:
 	dw WaterGunAnim
 	dw HydroPumpAnim
 	dw SurfAnim
+	dw PowderSnowAnim
 	dw IceBeamAnim
 	dw BlizzardAnim
 	dw PsyBeamAnim
@@ -164,6 +166,9 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+	dw MagnetBombAnim
+	dw DrainKissAnim
+	dw FairyWindAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -237,6 +242,7 @@ StruggleAnim:
 	battle_anim POUND, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end
 
+UppercutAnim:
 KarateChopAnim:
 	battle_anim KARATE_CHOP, SUBANIM_0_STAR_DESCENDING, 0, 8
 	db -1 ; end
@@ -524,6 +530,10 @@ SurfAnim:
 	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
 	battle_anim HYDRO_PUMP, SUBANIM_0_WATER_COLUMNS, 0, 6
 	db -1 ; end
+
+PowderSnowAnim:
+	battle_anim LEECH_SEED, SUBANIM_0_CIRCLES_FALLING, 0, 6
+	battle_anim NO_MOVE, SUBANIM_0_ICE_RISE, 0, 16
 
 IceBeamAnim:
 	battle_anim ICE_BEAM, SUBANIM_0_BEAM, 0, 3
@@ -906,9 +916,11 @@ SelfdestructAnim:
 	battle_anim SELFDESTRUCT, SUBANIM_1_SELFDESTRUCT, 1, 3
 	db -1 ; end
 
+MagnetBombAnim:
 EggBombAnim:
-	battle_anim EGG_BOMB, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 4
+	battle_anim BARRAGE, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 4
 	battle_anim EGG_BOMB, SUBANIM_1_EXPLOSION_SMALL_ENEMY, 1, 4
+	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	db -1 ; end
 
 LickAnim:
@@ -1141,6 +1153,18 @@ SubstituteAnim:
 	battle_anim SUBSTITUTE, SE_SLIDE_MON_OFF
 	battle_anim NO_MOVE, SUBANIM_0_BALL_POOF, 0, 8
 	battle_anim NO_MOVE, SE_SUBSTITUTE_MON
+	db -1 ; end
+
+DrainKissAnim:
+	battle_anim LOVELY_KISS, SUBANIM_0_HEART_1_MUSIC, 0, 6
+	battle_anim ABSORB, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 0, 6
+	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 0, 6
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
+	db -1 ; end
+
+FairyWindAnim:
+	battle_anim WHIRLWIND, SUBANIM_1_TORNADO, 1, 6
 	db -1 ; end
 
 BallTossAnim:

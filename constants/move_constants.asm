@@ -11,6 +11,7 @@
 	const DOUBLESLAP   ; 03
 	const COMET_PUNCH  ; 04
 	const MEGA_PUNCH   ; 05
+	const UPPERCUT
 	const PAY_DAY      ; 06
 	const FIRE_PUNCH   ; 07
 	const ICE_PUNCH    ; 08
@@ -63,6 +64,7 @@
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
 	const SURF         ; 39
+	const POWDER_SNOW
 	const ICE_BEAM     ; 3a
 	const BLIZZARD     ; 3b
 	const PSYBEAM      ; 3c
@@ -170,6 +172,9 @@
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
+	const MAGNET_BOMB  ; 
+	const DRAIN_KISS   ; 
+	const FAIRY_WIND   ;
 	const STRUGGLE     ; a5
 DEF NUM_ATTACKS EQU const_value - 1
 
