@@ -14,7 +14,8 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm
+	tmhm DRAGON_RAGE
 	; end
 
-	db 0 ; padding
+	db BANK(MagikarpPicFront)
+	assert BANK(MagikarpPicFront) == BANK(MagikarpPicBack)

@@ -11,7 +11,7 @@
 	dw FlareonPicFront, FlareonPicBack
 
 	db TACKLE, SAND_ATTACK, QUICK_ATTACK, EMBER ; level 1 learnset
-	db GROWTH_MEDIUM_FAST ; growth rate
+	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
@@ -19,4 +19,5 @@
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE
 	; end
 
-	db 0 ; padding
+	db BANK(FlareonPicFront)
+	assert BANK(FlareonPicFront) == BANK(FlareonPicBack)
