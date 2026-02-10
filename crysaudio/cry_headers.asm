@@ -4,7 +4,7 @@ MACRO mon_cry
 ENDM
 
 PokemonCries::
-; entries correspond to constants/pokemon_constants.asm
+; entries correspond to constants/pokedex_constants.asm
 	table_width MON_CRY_LENGTH
 	mon_cry CRY_BULBASAUR,   128,  129 ; BULBASAUR
 	mon_cry CRY_BULBASAUR,    32,  256 ; IVYSAUR
@@ -157,109 +157,36 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE
 	mon_cry CRY_PARAS,       153,  383 ; MEWTWO
 	mon_cry CRY_PARAS,       238,  383 ; MEW
-	assert_table_length NUM_POKEMON
-	mon_cry CRY_CHIKORITA,   -16,  176 ; CHIKORITA
-	mon_cry CRY_CHIKORITA,   -34,  288 ; BAYLEEF
-	mon_cry CRY_CHIKORITA,  -183,  512 ; MEGANIUM
-	mon_cry CRY_CYNDAQUIL,   839,  128 ; CYNDAQUIL
-	mon_cry CRY_CYNDAQUIL,   801,  288 ; QUILAVA
-	mon_cry CRY_TYPHLOSION, 3840,  212 ; TYPHLOSION
-	mon_cry CRY_TOTODILE,   1132,  232 ; TOTODILE
-	mon_cry CRY_TOTODILE,   1088,  272 ; CROCONAW
-	mon_cry CRY_TOTODILE,   1020,  384 ; FERALIGATR
-	mon_cry CRY_SENTRET,     138,  184 ; SENTRET
-	mon_cry CRY_SENTRET,     107,  258 ; FURRET
-	mon_cry CRY_HOOTHOOT,    145,  216 ; HOOTHOOT
-	mon_cry CRY_HOOTHOOT,      0,  416 ; NOCTOWL
-	mon_cry CRY_LEDYBA,        0,  222 ; LEDYBA
-	mon_cry CRY_LEDYBA,     -150,  312 ; LEDIAN
-	mon_cry CRY_SPINARAK,     17,  512 ; SPINARAK
-	mon_cry CRY_SPINARAK,   -174,  482 ; ARIADOS
-	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
-	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
-	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
-	mon_cry CRY_PICHU,         0,  320 ; PICHU
-	mon_cry CRY_CLEFFA,       97,  145 ; CLEFFA
-	mon_cry CRY_CHIKORITA,   232,  232 ; IGGLYBUFF
-	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
-	mon_cry CRY_TOGETIC,      59,   56 ; TOGETIC
-	mon_cry CRY_NATU,       -103,  256 ; NATU
-	mon_cry CRY_NATU,       -167,  360 ; XATU
-	mon_cry CRY_MAREEP,       34,  216 ; MAREEP
-	mon_cry CRY_MAREEP,       -7,  384 ; FLAAFFY
-	mon_cry CRY_AMPHAROS,   -124,  232 ; AMPHAROS
-	mon_cry CRY_CLEFFA,      132,  336 ; BELLOSSOM
-	mon_cry CRY_MARILL,      283,  288 ; MARILL
-	mon_cry CRY_MARILL,      182,  384 ; AZUMARILL
-	mon_cry CRY_CLEFFA,     3904,  384 ; SUDOWOODO
-	mon_cry CRY_CLEFFA,     -675,  456 ; POLITOED
-	mon_cry CRY_CLEFFA,       59,  200 ; HOPPIP
-	mon_cry CRY_CLEFFA,       39,  312 ; SKIPLOOM
-	mon_cry CRY_CLEFFA,        0,  384 ; JUMPLUFF
-	mon_cry CRY_AIPOM,       -81,  232 ; AIPOM
-	mon_cry CRY_MARILL,      299,  184 ; SUNKERN
-	mon_cry CRY_SUNFLORA,    -32,  384 ; SUNFLORA
-	mon_cry CRY_TOTODILE,     49,  200 ; YANMA
-	mon_cry CRY_WOOPER,      147,  175 ; WOOPER
-	mon_cry CRY_WOOPER,     -198,  320 ; QUAGSIRE
-	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
-	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
-	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
-	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
-	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
-	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
-	mon_cry CRY_AMPHAROS,    635,  324 ; WOBBUFFET
-	mon_cry CRY_GIRAFARIG,    65,  512 ; GIRAFARIG
-	mon_cry CRY_SLOWKING,    128,  256 ; PINECO
-	mon_cry CRY_SLOWKING,      0,  384 ; FORRETRESS
-	mon_cry CRY_DUNSPARCE,   452,  256 ; DUNSPARCE
-	mon_cry CRY_GLIGAR,     -258,  256 ; GLIGAR
-	mon_cry CRY_TYPHLOSION,  239,  247 ; STEELIX
-	mon_cry CRY_DUNSPARCE,   274,  232 ; SNUBBULL
-	mon_cry CRY_DUNSPARCE,     0,  384 ; GRANBULL
-	mon_cry CRY_SLOWKING,    352,  224 ; QWILFISH
-	mon_cry CRY_AMPHAROS,      0,  352 ; SCIZOR
-	mon_cry CRY_DUNSPARCE,   656,  168 ; SHUCKLE
-	mon_cry CRY_AMPHAROS,     53,  224 ; HERACROSS
-	mon_cry CRY_WOOPER,       83,  175 ; SNEASEL
-	mon_cry CRY_TEDDIURSA,  1954,  110 ; TEDDIURSA
-	mon_cry CRY_TEDDIURSA,  1600,  216 ; URSARING
-	mon_cry CRY_SLUGMA,     -472,  320 ; SLUGMA
-	mon_cry CRY_MAGCARGO,   -525,  448 ; MAGCARGO
-	mon_cry CRY_CYNDAQUIL,   510,  320 ; SWINUB
-	mon_cry CRY_MAGCARGO,   -265,  256 ; PILOSWINE
-	mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA
-	mon_cry CRY_SUNFLORA,     13,  256 ; REMORAID
-	mon_cry CRY_TOTODILE,      0,  384 ; OCTILLERY
-	mon_cry CRY_TEDDIURSA,     2,  106 ; DELIBIRD
-	mon_cry CRY_MANTINE,    -190,  240 ; MANTINE
-	mon_cry CRY_AMPHAROS,   2217,  384 ; SKARMORY
-	mon_cry CRY_CYNDAQUIL,    57,  320 ; HOUNDOUR
-	mon_cry CRY_TOTODILE,   -266,  256 ; HOUNDOOM
-	mon_cry CRY_SLUGMA,      763,  256 ; KINGDRA
-	mon_cry CRY_SENTRET,      72,  560 ; PHANPY
-	mon_cry CRY_DONPHAN,       0,  416 ; DONPHAN
-	mon_cry CRY_GIRAFARIG,   115,  576 ; PORYGON2
-	mon_cry CRY_AIPOM,      -352,  384 ; STANTLER
-	mon_cry CRY_PICHU,      -538,  496 ; SMEARGLE
-	mon_cry CRY_AIPOM,        44,  264 ; TYROGUE
-	mon_cry CRY_SLUGMA,        0,  256 ; HITMONTOP
-	mon_cry CRY_MARILL,      104,  256 ; SMOOCHUM
-	mon_cry CRY_SUNFLORA,   -728,  180 ; ELEKID
-	mon_cry CRY_TEDDIURSA,   374,   58 ; MAGBY
-	mon_cry CRY_GLIGAR,     -461,  416 ; MILTANK
-	mon_cry CRY_SLOWKING,    659,  320 ; BLISSEY
-	mon_cry CRY_RAIKOU,      558,  288 ; RAIKOU
-	mon_cry CRY_ENTEI,         0,  416 ; ENTEI
-	mon_cry CRY_MAGCARGO,      0,  384 ; SUICUNE
-	mon_cry CRY_RAIKOU,       95,  208 ; LARVITAR
-	mon_cry CRY_SPINARAK,   -475,  336 ; PUPITAR
-	mon_cry CRY_RAIKOU,     -256,  384 ; TYRANITAR
-	mon_cry CRY_TYPHLOSION,    0,  256 ; LUGIA
-	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
-	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 252
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 253
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 254
-	mon_cry CRY_NIDORAN_M,     0,    0 ; 255
-	assert_table_length $ff
+	mon_cry CRY_PIDGEY,        0,  256 ; BALUMBA
+	mon_cry CRY_BLASTOISE,   247,  128 ; BLASTYKE
+	mon_cry CRY_BLASTOISE,   147,  128 ; BLOTTLE
+	mon_cry CRY_DROWZEE,      46,  352 ; BUU
+	mon_cry CRY_NIDORAN_M,   128,  144 ; CACTORMUS
+	mon_cry CRY_RATTATA,     255,  192 ; CHEEP
+	mon_cry CRY_CLEFAIRY,    193,  156 ; COINPUR
+	mon_cry CRY_GOLEM,        37,  383 ; CROAKOZUNA
+	mon_cry CRY_BULBASAUR,    64,  256 ; DECILLA
+	mon_cry CRY_KANGASKHAN,   45,  129 ; GAOTORA
+	mon_cry CRY_RAICHU,      246,  192 ; GAVILLAIN
+	mon_cry CRY_BULBASAUR,     0,  256 ; GAWARHED
+	mon_cry CRY_RHYDON,       17,  383 ; GORILLAIMO
+	mon_cry CRY_RAICHU,        0,  256 ; GOROCHU
+	mon_cry CRY_RHYDON,       32,  144 ; GOROTORA
+	mon_cry CRY_ODDISH,        0,  383 ; GUARDIA
+	mon_cry CRY_BULBASAUR,    32,  320 ; IGUANARCH
+	mon_cry CRY_RATTATA,      50,  383 ; JABETTA
+	mon_cry CRY_WEEPINBELL,   55,  144 ; KOLTA
+	mon_cry CRY_KANGASKHAN,  163,  129 ; KOTORA
+	mon_cry CRY_FEAROW,       25,  383 ; LUXWAN
+	mon_cry CRY_BULBASAUR,    64,  320 ; MINISTARE
+	mon_cry CRY_BLASTOISE,     0,  128 ; OMEGADGE
+	mon_cry CRY_CATERPIE,    137,  142 ; ORFRY
+	mon_cry CRY_BLASTOISE,    60,  128 ; PENDRAKEN
+	mon_cry CRY_WEEDLE,       64,  293 ; RAMOOSE
+	mon_cry CRY_GOLEM,       147,  224 ; RIBBITO
+	mon_cry CRY_RAICHU,       16,  272 ; SHARPOON
+	mon_cry CRY_BULBASAUR,   100,  320 ; SQUEAMATA
+	mon_cry CRY_SQUIRTLE,      0,  256 ; TOTARTLE
+	mon_cry CRY_KANGASKHAN,  144,  304 ; TRAMPEL
+	mon_cry CRY_PIDGEY,      224,  224 ; VULPIII
+	mon_cry CRY_PSYDUCK,     147,  208 ; WEIRDUCK

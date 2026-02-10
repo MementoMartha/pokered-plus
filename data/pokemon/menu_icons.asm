@@ -151,4 +151,37 @@ MonPartyData:
 	nybble ICON_SNAKE     ; Dragonite
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
+	nybble ICON_BALL      ; Balumba
+	nybble ICON_WATER     ; Blastyke
+	nybble ICON_WATER     ; Blottle
+	nybble ICON_MON       ; Buu
+	nybble ICON_GRASS     ; Cactormus
+	nybble ICON_WATER     ; Cheep
+	nybble ICON_MON       ; Coinpur
+	nybble ICON_MON       ; Croakozuna
+	nybble ICON_MON       ; Decilla
+	nybble ICON_QUADRUPED ; Gaotora
+	nybble ICON_MON       ; Gavillain
+	nybble ICON_MON       ; Gawarhed
+	nybble ICON_MON       ; Gorillaimo
+	nybble ICON_FAIRY     ; Gorochu
+	nybble ICON_QUADRUPED ; Gorotora
+	nybble ICON_MON       ; Guardia
+	nybble ICON_MON       ; Iguanarch
+	nybble ICON_WATER     ; Jabetta
+	nybble ICON_QUADRUPED ; Kolta
+	nybble ICON_QUADRUPED ; Kotora
+	nybble ICON_BIRD      ; Luxwan
+	nybble ICON_MON       ; Ministare
+	nybble ICON_MON       ; Omegadge
+	nybble ICON_WATER     ; Orfry
+	nybble ICON_WATER     ; Pendraken
+	nybble ICON_QUADRUPED ; Ramoose
+	nybble ICON_MON       ; Ribbito
+	nybble ICON_WATER     ; Sharpoon
+	nybble ICON_MON       ; Squeamata
+	nybble ICON_WATER     ; Totartle
+	nybble ICON_MON       ; Trampel
+	nybble ICON_QUADRUPED ; Vulpiii
+	nybble ICON_MON       ; Weirduck
 	end_nybble_array NUM_POKEMON

@@ -45,7 +45,7 @@ TypeEffects:
 	db POISON,       GRASS,        SUPER_EFFECTIVE
 	db POISON,       POISON,       NOT_VERY_EFFECTIVE
 	db POISON,       GROUND,       NOT_VERY_EFFECTIVE
-	db FIRE,         ICE,          MOT_VERY_EFFECTIVE ; changed from vanilla
+	db FIRE,         ICE,          NOT_VERY_EFFECTIVE ; changed from vanilla
 	db POISON,       ROCK,         NOT_VERY_EFFECTIVE
 	db POISON,       GHOST,        NOT_VERY_EFFECTIVE
 	db GROUND,       FIRE,         SUPER_EFFECTIVE
