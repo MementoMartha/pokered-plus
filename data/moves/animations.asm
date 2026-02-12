@@ -534,6 +534,7 @@ SurfAnim:
 PowderSnowAnim:
 	battle_anim LEECH_SEED, SUBANIM_0_CIRCLES_FALLING, 0, 6
 	battle_anim NO_MOVE, SUBANIM_0_ICE_RISE, 0, 16
+	db -1 ; end
 
 IceBeamAnim:
 	battle_anim ICE_BEAM, SUBANIM_0_BEAM, 0, 3
