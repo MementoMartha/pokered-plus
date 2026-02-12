@@ -83,6 +83,8 @@ ChampionsRoomRivalReadyToBattleScript:
 	ld a, $3
 .saveTrainerId
 	ld [wTrainerNo], a
+	ld a, 1
+	ld [wIsTrainerBattle], a
 
 	xor a
 	ldh [hJoyHeld], a
@@ -93,7 +95,9 @@ ChampionsRoomRivalReadyToBattleScript:
 ChampionsRoomRivalDefeatedScript:
 	ld a, [wIsInBattle]
 	cp $ff
-	jp z, ResetRivalScript
+	jp z, ResetRivalScript	
+	xor a
+	ld [wIsTrainerBattle], a
 	call UpdateSprites
 	SetEvent EVENT_BEAT_CHAMPION_RIVAL
 	ld a, PAD_CTRL_PAD
