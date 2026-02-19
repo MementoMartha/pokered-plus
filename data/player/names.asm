@@ -13,3 +13,10 @@ FOR n, 1, NUM_PLAYER_NAMES + 1
 	next #RIVALNAME{d:n}
 ENDR
 	db "@"
+
+DefaultNamesFriend:
+	db "NEW NAME"
+FOR n, 1, NUM_PLAYER_NAMES + 1
+	next #FRIENDNAME{d:n}
+ENDR
+	db "@"

@@ -19,11 +19,11 @@ _PalletTownOakItsUnsafeText::
 
 _PalletTownGirlText::
 	text "I'm raising"
-	line "#MON too!"
+	line "#MON, too."
 
 	para "When they get"
 	line "strong, they can"
-	cont "protect me!"
+	cont "protect me."
 	done
 
 _PalletTownFisherText::
@@ -53,4 +53,8 @@ _PalletTownPlayersHouseSignText::
 
 _PalletTownRivalsHouseSignText::
 	text "<RIVAL>'s house "
+	done
+
+_PalletTownFriendsHouseSignText::
+	text "<FRIEND>'s house "
 	done

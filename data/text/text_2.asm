@@ -1694,49 +1694,63 @@ _LinkCanceledText::
 	done
 
 _OakSpeechText1::
-	text "Hello there!"
+	text "Hello, there!"
 	line "Welcome to the"
 	cont "world of #MON!"
 
-	para "My name is OAK!"
-	line "People call me"
-	cont "the #MON PROF!"
+	para "My name is OAK."
+	line "People refer to"
+	cont "me as the #MON"
+	cont "PROFESSOR."
 	prompt
 
 _OakSpeechText2A::
 	text "This world is"
-	line "inhabited by"
-	cont "creatures called"
-	cont "#MON!@"
+	line "inhabited far and"
+	cont "wide by creatures"
+	cont "called #MON.@"
 	text_end
 
 _OakSpeechText2B::
 	text_start
 
-	para "For some people,"
-	line "#MON are"
-	cont "pets. Others use"
-	cont "them for fights."
+	para "Some people keep"
+	line "#MON as pets."
+	cont "Others have them"
+	cont "do battle..."
 
-	para "Myself..."
-
-	para "I study #MON"
-	line "as a profession."
+	para "As for myself, I"
+	line "study #MON as"
+	cont "a profession."
 	prompt
 
 _IntroducePlayerText::
-	text "First, what is"
-	line "your name?"
+	text "Now, I'd like to"
+	line "ask you about"
+	cont "yourself. What"
+	cont "is your name?"
 	prompt
 
 _IntroduceRivalText::
-	text "This is my grand-"
-	line "son. He's been"
-	cont "your rival since"
-	cont "you were a baby."
+	text "This boy is my"
+	line "grandson. He's"
+	cont "been your rival"
+	cont "since you both"
+	cont "were babies."
 
-	para "...Erm, what is"
-	line "his name again?"
+	para "...Erm, what was"
+	line "his name now?"
+	prompt
+	
+_IntroduceFriendText::
+	text "Lastly, this girl"
+	line "here only moved"
+	cont "in recently, but"
+	cont "you two became"
+	cont "friends quickly."
+
+	para "Could you tell me"
+	line "her name, too?"
 	prompt
 
 _OakSpeechText3::
@@ -1749,7 +1763,9 @@ _OakSpeechText3::
 	para "A world of dreams"
 	line "and adventures"
 	cont "with #MON"
-	cont "awaits! Let's go!"
+	cont "awaits you!"
+	
+	para "Let's go!"
 	done
 
 _DoYouWantToNicknameText::
@@ -1761,7 +1777,7 @@ _DoYouWantToNicknameText::
 	done
 
 _YourNameIsText::
-	text "Right! So your"
+	text "Right... So your"
 	line "name is <PLAYER>!"
 	prompt
 
@@ -1769,6 +1785,11 @@ _HisNameIsText::
 	text "That's right! I"
 	line "remember now! His"
 	cont "name is <RIVAL>!"
+	prompt
+	
+_HerNameIsText::
+	text "I see! Her name"
+	line "is <FRIEND>!"
 	prompt
 
 _WillBeTradedText::

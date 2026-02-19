@@ -448,3 +448,5 @@ OldManPicBack::        INCBIN "gfx/battle/oldmanb.pic"
 FossilKabutopsPic::    INCBIN "gfx/pokemon/front/fossilkabutops.pic"
 FossilAerodactylPic::  INCBIN "gfx/pokemon/front/fossilaerodactyl.pic"
 GhostPic::             INCBIN "gfx/battle/ghost.pic"
+
+Friend1Pic::           INCBIN "gfx/trainers/friend1.pic"

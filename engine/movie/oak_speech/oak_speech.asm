@@ -37,6 +37,10 @@ PrepareOakSpeech:
 	ld hl, DebugNewGameRivalName
 	ld de, wRivalName
 	ld bc, NAME_LENGTH
+	call CopyData
+	ld hl, DebugNewGameFriendName
+	ld de, wFriendName
+	ld bc, NAME_LENGTH
 	jp CopyData
 
 OakSpeech:
@@ -99,6 +103,15 @@ OakSpeech:
 	ld hl, IntroduceRivalText
 	call PrintText
 	call ChooseRivalName
+	call GBFadeOutToWhite
+	call ClearScreen
+	ld de, Friend1Pic
+	lb bc, BANK(Friend1Pic), $00
+	call IntroDisplayPicCenteredOrUpperRight
+	call FadeInIntroPic
+	ld hl, IntroduceFriendText
+	call PrintText
+	call ChooseFriendName
 .skipSpeech
 	call GBFadeOutToWhite
 	call ClearScreen
@@ -183,6 +196,10 @@ IntroducePlayerText:
 
 IntroduceRivalText:
 	text_far _IntroduceRivalText
+	text_end
+
+IntroduceFriendText:
+	text_far _IntroduceFriendText
 	text_end
 
 OakSpeechText3:

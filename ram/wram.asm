@@ -1848,7 +1848,7 @@ wSpriteSetID:: db
 
 wObjectDataPointerTemp:: dw
 
-	ds 2
+wFriendName:: ds NAME_LENGTH
 
 ; the tile shown outside the boundaries of the map
 wMapBackgroundTile:: db

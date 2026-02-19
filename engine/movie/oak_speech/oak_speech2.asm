@@ -64,6 +64,39 @@ HisNameIsText:
 	text_far _HisNameIsText
 	text_end
 
+ChooseFriendName:
+	call OakSpeechSlidePicRight
+	ld de, DefaultNamesFriend
+	call DisplayIntroNameTextBox
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .customName
+	ld hl, DefaultNamesFriendList
+	call GetDefaultName
+	ld de, wFriendName
+	call OakSpeechSlidePicLeft
+	jr .done
+.customName
+	ld hl, wFriendName
+	ld a, NAME_RIVAL_SCREEN
+	ld [wNamingScreenType], a
+	call DisplayNamingScreen
+	ld a, [wStringBuffer]
+	cp '@'
+	jr z, .customName
+	call ClearScreen
+	call Delay3
+	ld de, Friend1Pic
+	ld b, BANK(Friend1Pic)
+	call IntroDisplayPicCenteredOrUpperRight
+.done
+	ld hl, HerNameIsText
+	jp PrintText
+
+HerNameIsText:
+	text_far _HerNameIsText
+	text_end
+
 OakSpeechSlidePicLeft:
 	push de
 	hlcoord 0, 0
