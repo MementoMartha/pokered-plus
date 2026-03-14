@@ -34,9 +34,9 @@ DisplayTitleScreen:
 	ldh [hAutoBGTransferEnabled], a
 	xor a
 	ldh [hTileAnimations], a
-	ldh [hSCX], a
-	ld a, $40
 	ldh [hSCY], a
+	ld a, -112
+	ldh [hSCX], a
 	ld a, $90
 	ldh [hWY], a
 	call ClearScreen
@@ -99,11 +99,6 @@ DisplayTitleScreen:
 
 	call DrawPlayerCharacter
 
-; put a pokeball in the player's hand
-	ld hl, wShadowOAMSprite10
-	ld a, $74
-	ld [hl], a
-
 ; place tiles for title screen copyright
 	hlcoord 2, 17
 	ld de, .tileScreenCopyrightTiles
@@ -149,9 +144,10 @@ ENDC
 	ld a, %11100100
 	ldh [rOBP0], a
 
-; make pokemon logo bounce up and down
-	ld bc, hSCY ; background scroll Y
-	ld hl, .TitleScreenPokemonLogoYScrolls
+	ld a, SFX_INTRO_WHOOSH
+	call PlaySound
+	ld bc, hSCX ; background scroll X
+	ld hl, .TitleScreenPokemonLogoXScrolls
 .bouncePokemonLogoLoop
 	ld a, [hli]
 	and a
@@ -167,15 +163,9 @@ ENDC
 	call .ScrollTitleScreenPokemonLogo
 	jr .bouncePokemonLogoLoop
 
-.TitleScreenPokemonLogoYScrolls:
+.TitleScreenPokemonLogoXScrolls:
 ; Controls the bouncing effect of the Pokemon logo on the title screen
-	db -4,16  ; y scroll amount, number of times to scroll
-	db 3,4
-	db -3,4
-	db 2,2
-	db -2,2
-	db 1,2
-	db -1,2
+	db 4,28   ; x scroll amount, number of times to scroll
 	db 0      ; terminate list with 0
 
 .ScrollTitleScreenPokemonLogo:
@@ -193,26 +183,12 @@ ENDC
 	call LoadScreenTilesFromBuffer1
 	ld c, 36
 	call DelayFrames
-	ld a, SFX_INTRO_WHOOSH
-	call PlaySound
 
 ; scroll game version in from the right
 	call PrintGameVersionOnTitleScreen
 	ld a, SCREEN_HEIGHT_PX
 	ldh [hWY], a
-	ld d, 144
-.scrollTitleScreenGameVersionLoop
-	ld h, d
-	ld l, 64
-	call ScrollTitleScreenGameVersion
-	ld h, 0
-	ld l, 80
-	call ScrollTitleScreenGameVersion
-	ld a, d
-	add 4
-	ld d, a
-	and a
-	jr nz, .scrollTitleScreenGameVersionLoop
+	call Delay3
 
 	ld a, HIGH(vBGMap1)
 	call TitleScreenCopyTileMapToVRAM
@@ -228,7 +204,7 @@ ENDC
 
 ; Keep scrolling in new mons indefinitely until the user performs input.
 .awaitUserInterruptionLoop
-	ld c, 200
+	ld c, 255
 	call CheckForUserInterruption
 	jr c, .finishedWaiting
 	call TitleScreenScrollInMon
@@ -331,7 +307,7 @@ DrawPlayerCharacter:
 	xor a
 	ld [wPlayerCharacterOAMTile], a
 	ld hl, wShadowOAM
-	lb de, $60, $5a
+	lb de, $60, $30
 	ld b, 7
 .loop
 	push de
@@ -367,7 +343,7 @@ ClearBothBGMaps:
 LoadTitleMonSprite:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
-	hlcoord 5, 10
+	hlcoord 9, 10
 	call GetMonHeader
 	jp LoadFrontSpriteByMonIndex
 
@@ -400,18 +376,13 @@ INCLUDE "data/pokemon/title_mons.asm"
 
 ; prints version text (red, blue)
 PrintGameVersionOnTitleScreen:
-	hlcoord 7, 8
+	hlcoord 5, 8
 	ld de, VersionOnTitleScreenText
 	jp PlaceString
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
 VersionOnTitleScreenText:
-IF DEF(_RED)
-	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
-ENDC
-IF DEF(_BLUE)
-	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
-ENDC
+	db $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,$6A,$6B,"@" ; "Gotta catch 'em all!"
 
 DebugNewGamePlayerName:
 	db "NINTEN@"
