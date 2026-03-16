@@ -8,8 +8,6 @@ RedsHouse2_GFX::    INCBIN "gfx/tilesets/reds_house.2bpp"
 RedsHouse1_Block::
 RedsHouse2_Block::  INCBIN "gfx/blocksets/reds_house.bst"
 
-House_GFX::         INCBIN "gfx/tilesets/house.2bpp"
-House_Block::       INCBIN "gfx/blocksets/house.bst"
 Mansion_GFX::       INCBIN "gfx/tilesets/mansion.2bpp"
 Mansion_Block::     INCBIN "gfx/blocksets/mansion.bst"
 ShipPort_GFX::      INCBIN "gfx/tilesets/ship_port.2bpp"
@@ -39,8 +37,6 @@ ForestGate_Block::
 Museum_Block::
 Gate_Block::        INCBIN "gfx/blocksets/gate.bst"
 
-Forest_GFX::        INCBIN "gfx/tilesets/forest.2bpp"
-Forest_Block::      INCBIN "gfx/blocksets/forest.bst"
 Facility_GFX::      INCBIN "gfx/tilesets/facility.2bpp"
 Facility_Block::    INCBIN "gfx/blocksets/facility.bst"
 
@@ -61,3 +57,11 @@ Club_GFX::          INCBIN "gfx/tilesets/club.2bpp"
 Club_Block::        INCBIN "gfx/blocksets/club.bst"
 Underground_GFX::   INCBIN "gfx/tilesets/underground.2bpp"
 Underground_Block:: INCBIN "gfx/blocksets/underground.bst"
+
+
+SECTION "Tilesets 4", ROMX
+
+House_GFX::         INCBIN "gfx/tilesets/house.2bpp"
+House_Block::       INCBIN "gfx/blocksets/house.bst"
+Forest_GFX::        INCBIN "gfx/tilesets/forest.2bpp"
+Forest_Block::      INCBIN "gfx/blocksets/forest.bst"
