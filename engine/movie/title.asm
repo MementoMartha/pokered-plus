@@ -3,17 +3,11 @@ CopyDebugName:
 	jp CopyData
 
 PrepareTitleScreen::
-	; These debug names are already copied later in PrepareOakSpeech.
-	; Removing the unused copies below has no apparent impact.
-	; CopyDebugName can also be safely deleted afterwards.
 	ld hl, DebugNewGamePlayerName
 	ld de, wPlayerName
 	call CopyDebugName
 	ld hl, DebugNewGameRivalName
 	ld de, wRivalName
-	call CopyDebugName
-	ld hl, DebugNewGameFriendName
-	ld de, wFriendName
 	call CopyDebugName
 	xor a
 	ldh [hWY], a
@@ -34,8 +28,7 @@ DisplayTitleScreen:
 	ldh [hAutoBGTransferEnabled], a
 	xor a
 	ldh [hTileAnimations], a
-	ldh [hSCY], a
-	ld a, -112
+	ld a, $90
 	ldh [hSCX], a
 	ld a, $90
 	ldh [hWY], a
@@ -118,6 +111,8 @@ DisplayTitleScreen:
 
 .next
 	call SaveScreenTilesToBuffer2
+	call PrintGameVersionOnTitleScreen
+	call SaveScreenTilesToBuffer1
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
 
@@ -132,10 +127,8 @@ ENDC
 
 	ld a, HIGH(vBGMap0 + $300)
 	call TitleScreenCopyTileMapToVRAM
-	call SaveScreenTilesToBuffer1
 	ld a, $40
 	ldh [hWY], a
-	call LoadScreenTilesFromBuffer2
 	ld a, HIGH(vBGMap0)
 	call TitleScreenCopyTileMapToVRAM
 	ld b, SET_PAL_TITLE_SCREEN
@@ -146,61 +139,29 @@ ENDC
 
 	ld a, SFX_INTRO_WHOOSH
 	call PlaySound
-	ld bc, hSCX ; background scroll X
-	ld hl, .TitleScreenPokemonLogoXScrolls
-.bouncePokemonLogoLoop
-	ld a, [hli]
-	and a
-	jr z, .finishedBouncingPokemonLogo
-	ld d, a
-	cp -3
-	jr nz, .skipPlayingSound
-	ld a, SFX_INTRO_CRASH
-	call PlaySound
-.skipPlayingSound
-	ld a, [hli]
-	ld e, a
-	call .ScrollTitleScreenPokemonLogo
-	jr .bouncePokemonLogoLoop
 
-.TitleScreenPokemonLogoXScrolls:
-; Controls the bouncing effect of the Pokemon logo on the title screen
-	db 4,28   ; x scroll amount, number of times to scroll
-	db 0      ; terminate list with 0
-
-.ScrollTitleScreenPokemonLogo:
-; Scrolls the Pokemon logo on the title screen to create the bouncing effect
-; Scrolls d pixels e times
+; Scrolls the Pokemon title in from the right
+.scrollTitleScreenLogoLoop
 	call DelayFrame
-	ld a, [bc] ; background scroll Y
-	add d
-	ld [bc], a
-	dec e
-	jr nz, .ScrollTitleScreenPokemonLogo
-	ret
+	ldh a, [hSCX]
+	add 4
+	ldh [hSCX], a
+	jr nz, .scrollTitleScreenLogoLoop
 
-.finishedBouncingPokemonLogo
-	call LoadScreenTilesFromBuffer1
-	ld c, 36
-	call DelayFrames
-
-; scroll game version in from the right
-	call PrintGameVersionOnTitleScreen
-	ld a, SCREEN_HEIGHT_PX
+	ld a, $90
 	ldh [hWY], a
+	ld c, $14
+	call DelayFrames
+	call PrintGameVersionOnTitleScreen
 	call Delay3
 
 	ld a, HIGH(vBGMap1)
 	call TitleScreenCopyTileMapToVRAM
-	call LoadScreenTilesFromBuffer2
-	call PrintGameVersionOnTitleScreen
+	call LoadScreenTilesFromBuffer1
 	call Delay3
-	call WaitForSoundToFinish
 	ld a, MUSIC_TITLE_SCREEN
 ;	ld [wNewSoundID], a
 	call PlayMusic
-	xor a
-	ld [wUnusedFlag], a
 
 ; Keep scrolling in new mons indefinitely until the user performs input.
 .awaitUserInterruptionLoop
@@ -208,10 +169,6 @@ ENDC
 	call CheckForUserInterruption
 	jr c, .finishedWaiting
 	call TitleScreenScrollInMon
-	ld c, 1
-	call CheckForUserInterruption
-	jr c, .finishedWaiting
-	farcall TitleScreenAnimateBallIfStarterOut
 	call TitleScreenPickNewMon
 	jr .awaitUserInterruptionLoop
 
@@ -223,7 +180,7 @@ ENDC
 	call ClearSprites
 	xor a
 	ldh [hWY], a
-	inc a
+	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
 	ld a, HIGH(vBGMap0)
@@ -271,18 +228,35 @@ TitleScreenPickNewMon:
 
 	ld a, $90
 	ldh [hWY], a
-	ld d, 1 ; scroll out
-	farcall TitleScroll
-	ret
+	ld d, $a0
+	ld c, $c
+	jp TitleScroll
 
 TitleScreenScrollInMon:
-	ld d, 0 ; scroll in
-	farcall TitleScroll
+	ld d, 0
+	ld c, $14
+	call TitleScroll
 	xor a
 	ldh [hWY], a
 	ret
 
-ScrollTitleScreenGameVersion:
+TitleScroll:
+	ld h, d
+	ld l, $48
+	call ScrollBetween
+
+	ld h, $00
+	ld l, $88
+	call ScrollBetween
+
+	ld a, d
+	add 8
+	ld d, a
+	dec c
+	jr nz, TitleScroll
+	ret
+
+ScrollBetween:
 .wait
 	ldh a, [rLY]
 	cp l
