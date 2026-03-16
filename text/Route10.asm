@@ -16,20 +16,20 @@ _Route10SuperNerd1AfterBattleText::
 	done
 
 _Route10Hiker1BattleText::
-	text "Ha-hahah-ah-ha!"
+	text "Ha!"
+	line "Haha-ha...!"
 	done
 
 _Route10Hiker1EndBattleText::
-	text "Ha-haha!"
-	line "Not laughing!"
-	cont "Ha-hay fever!"
-	cont "Haha-ha-choo!"
+	text "Ahaha!"
+	line "I shouldn't have"
+	cont "eaten those...!"
 	prompt
 
 _Route10Hiker1AfterBattleText::
-	text "Haha-ha-choo!"
-	line "Ha-choo!"
-	cont "Snort! Snivel!"
+	text "Those odd-looking"
+	line "mushrooms...!"
+	cont "Ahaha! Haha...!"
 	done
 
 _Route10SuperNerd2BattleText::

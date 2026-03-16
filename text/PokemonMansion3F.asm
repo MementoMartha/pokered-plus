@@ -30,8 +30,17 @@ _PokemonMansion3FScientistAfterBattleText::
 
 _PokemonMansion3FDiaryText::
 	text "Diary: Feb. 6"
-	line "MEW gave birth."
 
-	para "We named the"
-	line "newborn MEWTWO."
+	para "Using MEW's DNA,"
+	line "we have finally"
+	cont "obtained a living"
+	cont "MEW clone."
+
+	para "We have named it"
+	line "'MEWTWO'."
+
+	para "Our research must"
+	line "continue to see"
+	cont "what MEWTWO is"
+	cont "capable of." 
 	done

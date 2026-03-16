@@ -1,7 +1,11 @@
 _SafariZoneCenterRestHouseGirlText::
-	text "SARA: Where did"
-	line "my boy friend,"
-	cont "ERIK, go?"
+	text "ATSUKO: I asked"
+	line "KOJI to catch"
+	cont "some #MON with"
+	cont "me..."
+
+	para "But he still"
+	line "hasn't shown up!"
 	done
 
 _SafariZoneCenterRestHouseScientistText::

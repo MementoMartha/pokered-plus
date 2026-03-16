@@ -17,19 +17,40 @@ _PokemonMansion2FSuperNerdAfterBattleText::
 
 _PokemonMansion2FDiary1Text::
 	text "Diary: July 5"
-	line "Guyana,"
-	cont "South America"
 
-	para "A new #MON was"
-	line "discovered deep"
-	cont "in the jungle."
+	para "An expedition to"
+	line "South America is"
+	cont "underway."
+
+	para "We believe that a"
+	line "never-before-seen"
+	cont "#MON has been"
+	cont "located somewhere"
+	cont "in Guyana."
 	done
 
 _PokemonMansion2FDiary2Text::
 	text "Diary: July 10"
-	line "We christened the"
-	cont "newly discovered"
-	cont "#MON, MEW."
+
+	para "Although this new"
+	line "#MON species"
+	cont "still eludes us,"
+	cont "we have instead"
+	cont "found a shrine"
+	cont "dedicated to it."
+
+	para "We've believed"
+	line "this #MON to"
+	cont "be extinct for"
+	cont "many years."
+
+	para "I've decided to"
+	line "christen it"
+	cont "'MEW'."
+
+	para "I hope we may"
+	line "see a live MEW"
+	cont "someday..."
 	done
 
 _PokemonMansion2FSwitchText::

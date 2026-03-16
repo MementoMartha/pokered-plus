@@ -29,11 +29,30 @@ _PokemonMansionB1FScientistAfterBattleText::
 	done
 
 _PokemonMansionB1FDiaryText::
-	text "Diary; Sept. 1"
+	text "Diary: Sept. 1"
+
 	line "MEWTWO is far too"
 	cont "powerful."
 
-	para "We have failed to"
-	line "curb its vicious"
-	cont "tendencies..."
+	para "It's no use..."
+
+	para "I cannot control"
+	line "it any longer!"
+	done
+
+_PokemonMansionB1FDiary2Text::
+	text "Diary: Sept. 3"
+
+	para "MEWTWO is gone."
+
+	para "Our expedition to"
+	line "Guyana was a"
+	cont "mistake. I must"
+	cont "hide that map..."
+	
+	para "No one will find"
+	line "it there. I hope"
+	cont "it'll soon end up"
+	cont "at the bottom of"
+	cont "the sea..."
 	done

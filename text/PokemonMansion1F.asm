@@ -27,3 +27,37 @@ _PokemonMansion1FSwitchPressedText::
 _PokemonMansion1FSwitchNotPressedText::
 	text "Not quite yet!"
 	done
+
+_PokemonMansion1FDiary1Text::
+	text "Diary: Aug. 6"
+
+	para "We have made an"
+	line "incredible new"
+	cont "discovery."
+
+	para "It appears to be"
+	line "an authentic MEW"
+	cont "fossil."
+
+	para "I wonder..."
+
+	para "Could this be"
+	line "used to create a"
+	cont "replica of MEW?"
+	done
+
+_PokemonMansion1FDiary2Text::
+	text "Diary: Feb 27"
+
+	para "Everything seems"
+	line "to be going well."
+	
+	para "MEWTWO's psychic"
+	cont "power is causing"
+	line "incredibly high"
+	cont "energy readings."
+
+	para "Could MEWTWO be"
+	line "even greater than"
+	cont "MEW?"
+	done
